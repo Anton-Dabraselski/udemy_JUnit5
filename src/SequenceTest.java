@@ -1,7 +1,6 @@
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.lang.reflect.Method;
 
@@ -33,5 +32,19 @@ public class SequenceTest {
     void hiThere(TestInfo info) {
         System.out.println("in " + info.getDisplayName());
     }
+
+    @Test
+    @DisplayName("When string in null, throw on NPE.") //аналогично если бы это сообщение было третим аргуметном в assertThrows
+    void testException() {
+        String string = null;
+        assertThrows(NullPointerException.class, () -> string.length());
+    }
+
+    //@Test
+    @RepeatedTest(5)
+    void testRepeated() {
+        System.out.println("in test Repeated...");
+    }
+
 
 }
