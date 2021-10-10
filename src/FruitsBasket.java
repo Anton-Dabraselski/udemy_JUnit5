@@ -24,4 +24,13 @@ public class FruitsBasket {
     public void removeAll() {
     	basket.clear();
     }
+
+    public boolean addALot(List<Fruit> fruits){
+        return basket.addAll(fruits);
+    }
+
+    public String[] greet(String text) {
+        return text.split("[ !]");
+    }
+
 }

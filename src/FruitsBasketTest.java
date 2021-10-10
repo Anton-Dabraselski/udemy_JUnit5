@@ -1,3 +1,6 @@
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 import  org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
@@ -19,30 +22,57 @@ public class FruitsBasketTest {
     	basket.add(pear);
     }
 
-    @Test
-    public void testSize() {
-        assertEquals(3, basket.getSize(), "Checking basket's size");
-    }
+//    @Test
+//    public void testSize() {
+//        assertEquals(3, basket.getSize(), "Checking basket's size");
+//    }
+//
+//    @Test
+//    public void testAdd() {
+//    	basket.add(new Fruit("Banana", 200));
+//        assertEquals(4, basket.getSize(), "Adding one more fruit to the basket");
+//    }
+//
+//    @Test
+//    public void testRemove() {
+//    	basket.remove(orange);
+//        assertEquals(2, basket.getSize(),"Removing a fruit from the basket");
+//    }
+//
+//    @Test
+//    public void testRemoveException() {
+//        assertThrows(NoSuchElementException.class, () -> basket.remove(new Fruit("Kiwi", 80)), "Removing a fruit from the basket");
+//    }
+//
+//    @Test
+//    void testForTimeout(){
+//        assertTimeout(Duration.ofMillis(1), () -> Thread.sleep(10), () ->"Testing for productivity");
+//    }
+//
+//    @Test
+//    void testForNull() {
+//        basket = null;
+//        assertNull(basket, "Checking if the basket is null");
+//    }
 
     @Test
-    public void testAdd() {
-    	basket.add(new Fruit("Banana", 200));
-        assertEquals(4, basket.getSize(), "Adding one more fruit to the basket");
+    void testForTruth() {
+        List<Fruit> lot = Arrays.asList(new Fruit("Peach", 40), new Fruit("Apple", 10), new Fruit("Mango", 300));
+        assertTrue(basket.addALot(lot), "Adding a lot of fruits.");
     }
 
-    @Test
-    public void testRemove() {
-    	basket.remove(orange);
-        assertEquals(2, basket.getSize(),"Removing a fruit from the basket");
-    }
-
-    @Test
-    public void testRemoveException() {
-        assertThrows(NoSuchElementException.class, () -> basket.remove(new Fruit("Kiwi", 80)), "Removing a fruit from the basket");
-    }
-    
     @AfterEach
     public void destroy() {
     	basket.removeAll();
     }
+
+    @Test
+    void testArrays() {
+        String str = "Buon anno a tutti voi!";
+        String[] exp = {"Buon", "anno", "a", "tutti", "voi"};
+        String[] actual = basket.greet(str);
+        assertArrayEquals(exp, actual);
+    }
+
+
 }
