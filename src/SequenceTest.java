@@ -41,7 +41,7 @@ public class SequenceTest {
     }
 
     //@Test
-    @RepeatedTest(5)
+    @RepeatedTest(name = "Repeated test", value = 5)
     void testRepeated() {
         System.out.println("in test Repeated...");
     }

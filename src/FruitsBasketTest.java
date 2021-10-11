@@ -2,6 +2,8 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import org.junit.jupiter.api.Disabled;
 import  org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -46,7 +48,7 @@ public class FruitsBasketTest {
 //
 //    @Test
 //    void testForTimeout(){
-//        assertTimeout(Duration.ofMillis(1), () -> Thread.sleep(10), () ->"Testing for productivity");
+//        assertTimeout(Duration.ofMillis(1), () -> Thread.sleep(1500), () ->"Testing for productivity");
 //    }
 //
 //    @Test
@@ -72,6 +74,11 @@ public class FruitsBasketTest {
         String[] exp = {"Buon", "anno", "a", "tutti", "voi"};
         String[] actual = basket.greet(str);
         assertArrayEquals(exp, actual);
+    }
+
+    @Disabled("Because it is just an illustration")
+    void testDisabled() {
+        System.out.println("Disabled test...");
     }
 
 
